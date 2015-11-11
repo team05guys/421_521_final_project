@@ -19,7 +19,7 @@ minDist = 0.25
 with picamera.PiCamera() as camera:
    while True:
 	camera.start_preview()
-	time.sleep(5)
+	time.sleep(2)
 	camera.capture('pifacepw.jpg')
 	image = Image("pifacepw.jpg")
 	camera.stop_preview()
