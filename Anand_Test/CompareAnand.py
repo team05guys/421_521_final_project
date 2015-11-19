@@ -5,9 +5,6 @@ import time
 from SimpleCV import Color, Image, np
 import os
 import glob
-import rss_reddit
-from weather_pass_individualized import *
-
 
 #Set up grid overlay
 import numpy as np
@@ -20,8 +17,6 @@ a[x_offset, :, :] = 0xff
 a[480 - x_offset, :, :] = 0xff
 a[:, y_offset, :] = 0xff
 a[:, 800 - y_offset, :] = 0xff
-
-
 
 quality = 400
 minMatch = 0.3
@@ -59,34 +54,10 @@ with picamera.PiCamera() as camera:
 				password = Image(e)
 				keypoints = password.findKeypointMatch(template,quality,minDist,minMatch)
 				if keypoints:
-					#print your name
-					myName = str(e[9:(len(e)-4)])
-					print("Welcome back, " + myName + "!" + "\n")
-
-					#print greeting file
-                                        greeting_file = open("/home/pi/421_521_final_project/Anand_Test/Personal_Stuff/greeting/" + myName + "_greeting.txt", 'r')
-	                                print(greeting_file.read())
-					print
-					print("---------------------------------------------------------\n")
-
-					#Print current time and date
-					print("The Current Time is " + time.strftime("%I:%M:%S %p %Z "))
-					print("Today is " + time.strftime("%A, %b. %d, %Y") + "\n")
-
-					#Print Weather for Current City
-					lookup_weather(myName)
-					print
-					print("---------------------------------------------------------\n")
-					
-					#open file containing name of favorite city
-					city_file = open ("/home/pi/421_521_final_project/Anand_Test/Personal_Stuff/city/" + myName + "_city.txt", 'r')
-					city_file_contents = city_file.read()
-
-					#print top 10 reddit posts from favorite city subreddit 
-					print("Displaying top 10 reddit posts from the " + city_file_contents + " subreddit: \n")
-					rss_reddit.subreddit(city_file_contents)
-
-
+					#f = open("/home/pi/421_521_final_project/Anand_Test/Personal_Stuff/Dan.txt", 'w')
+					print("Welcome back " + str(e[9:(len(e)-4)]))
+					print("The Current Time is " + time.strftime("%I:%M:%S %p "))
+					print("The Current Date is " + time.strftime("%m/%d/%Y"))
 					break
 			
 			if not keypoints:
