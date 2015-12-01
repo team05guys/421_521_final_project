@@ -5,14 +5,6 @@ _Dan Sazer & Anand Ganapathy_
 
 Rice Bioe 421/521 Final Project
 
-#Brainstorm
-
-##Facial Recognition Software to Unlock a Door
-
-
-We are proposing to build a security system that recognizes individual faces and mechanically unlocks a door. The system would incorporate a Raspberry Pi microcontroller, an Arduino microcontroller, a camera, and a servo motor. The Raspberry Pi would process images from the camera, compare the images to a database of known users with access to the door, and then send a digital signal to the servo motor, via Arduino, if the given user has clearance. 
-This project will necessitate the use of several external resources, including servo motors, customized housing and actuation components, and open-source facial recognition software.
-
 #Abstract
 
 ##A Customizable Facial Recognition System to Perform Modularized Tasks
