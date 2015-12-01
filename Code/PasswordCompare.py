@@ -6,7 +6,7 @@ from SimpleCV import Color, Image, np
 import os
 import glob
 import rss_reddit
-from weather_pass_individualized import *
+from weather import *
 
 
 #Set up grid overlay
@@ -31,7 +31,7 @@ with picamera.PiCamera() as camera:
 		camera.start_preview()
 		#overlay grid 		
 		o = camera.add_overlay(np.getbuffer(a), layer = 3, alpha = 64)
-		time.sleep(3)	
+		time.sleep(10)	
 		camera.capture('pifacepw.jpg')
 		#remove grid
 		camera.remove_overlay(o)
@@ -44,7 +44,7 @@ with picamera.PiCamera() as camera:
 			
 			#load the file names of each pre-exisiting password image into an array
 			password_array = []
-			os.chdir("/home/pi/421_521_final_project/Anand_Test/Saved_Passwords")
+			os.chdir("/home/pi/421_521_final_project/Code/Saved_Passwords")
 			for file in glob.glob("password_*"):
 				password_array.append(file)
 
@@ -65,7 +65,7 @@ with picamera.PiCamera() as camera:
 					print("Welcome back, " + myName + "!" + "\n")
 
 					#print greeting file
-                                        greeting_file = open("/home/pi/421_521_final_project/Anand_Test/Personal_Stuff/greeting/" + myName + "_greeting.txt", 'r')
+                                        greeting_file = open("/home/pi/421_521_final_project/Code/Personal_Stuff/greeting/" + myName + "_greeting.txt", 'r')
 	                                print(greeting_file.read())
 					print
 					print("---------------------------------------------------------\n")
@@ -80,7 +80,7 @@ with picamera.PiCamera() as camera:
 					print("---------------------------------------------------------\n")
 					
 					#open file containing name of favorite city
-					city_file = open ("/home/pi/421_521_final_project/Anand_Test/Personal_Stuff/city/" + myName + "_city.txt", 'r')
+					city_file = open ("/home/pi/421_521_final_project/Code/Personal_Stuff/city/" + myName + "_city.txt", 'r')
 					city_file_contents = city_file.read()
 
 					#print top 10 reddit posts from favorite city subreddit 
