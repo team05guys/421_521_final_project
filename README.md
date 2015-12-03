@@ -60,7 +60,7 @@ Progress: We were able to get facial identification working using the adafruit t
 #References 
 1. https://learn.adafruit.com/raspberry-pi-face-recognition-treasure-box/overview
 2. https://thinkrpi.wordpress.com/2013/05/22/opencv-and-camera-board-csi
-3. https://www.youtube.com/watch?v=vRHoQVZLvoM - pictures for figure 2
+3. https://www.youtube.com/watch?v=vRHoQVZLvoM
 4. http://www.open-electronics.org/raspberry-pi-and-the-camera-pi-module-face-recognition-tutorial
 5. http://thecodeinn.blogspot.com/2013/07/tutorial-weather-forecast-in-python.html
 6. https://code.google.com/p/python-weather-api
