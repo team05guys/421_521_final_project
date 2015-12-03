@@ -5,20 +5,20 @@ _Dan Sazer & Anand Ganapathy_
 
 Rice Bioe 421/521 Final Project
 
-#Summary of Device
-The contents of this repository allows personalized text outputs to be displayed in response to user facial identification. Upon facial registration, the user is prompted to enter his or her name, a personalized greeting, current zip code (for weather forecasts), and favorite subreddit. Upon facial identification, the personalized data will be output. 
+#Summary (A Customizable, Facial Identification-based Personal Assistant Device)
+The contents of this repository allow personalized text outputs to be displayed in response to user facial identification. Upon facial registration, the user is prompted to enter his or her name, a personalized greeting message, his or her current zip code (for weather forecasting), and favorite subreddit. Upon facial identification, the personalized data will be output. 
 
 #Technical Requirements
 ###Hardware
-- Raspberry Pi or other microcontroller compatible with Raspbian 
-- A camera module compatible with your microcontroller
-- LCD screen compatible with your microcontroller
-- STDINPUT device (e.g. keyboard) compatible with your microcontroller 
+- Raspberry Pi (other microcontroller compatible with Raspbian)
+- A camera module (compatible with your microcontroller)
+- LCD screen (compatible with your microcontroller)
+- STDINPUT device (e.g. keyboard) (compatible with your microcontroller)
 
 ###Software
 - Raspbian
 - Python
-- Python modules (references listed at end)
+- Python modules (download references listed at end of this README.md)
   * Picamera
   * SimpleCV
   * Numpy
@@ -26,29 +26,29 @@ The contents of this repository allows personalized text outputs to be displayed
   * Feedparser
   
 ###Walkthrough
-1. Download the entire repository from GitHub that contains this README.md
-2. Verify the microcontroller is connected to your camera, LCD screen, and STDINPUT device
-3. Install relevant Python modules as outlined in the "Software" portion of this README.MD
-4. Position face in front of camera
+1. Download this entire repository from GitHub 
+2. Verify the microcontroller recognizes your camera, LCD screen, and STDINPUT device
+3. Install relevant Python modules as outlined in the "Software" portion of this README.md
+4. When ready to register a new user, position face in front of camera
 5. Execture PasswordSet.py
-6. Input requested information
-7. Wait, chill, do whatever, go to sleep and wakeup, wait 10 years, etc
-8. Position face in front of camera
-9. Execture PasswordCompare.py
-10. Marvel at your requested personal data
+6. Align face with grid
+7. Input requested information
+8. Wait, chill, do whatever, go to sleep and wakeup, wait 10 years, etc
+9. When ready to identify a registered user, position face in front of camera
+10. Execture PasswordCompare.py
+11. Align face with grid
+12. Marvel at your requested personal data
 
 
 
 #Abstract
 
-##A Customizable Facial Recognition System to Perform Modularized Tasks
+##A Customizable, Facial Identification-based Personal Assistant Device
 
 
-As technology advances, it is becoming increasingly feasible for laymen and hobbyists to develop personalized biometric based control systems for household use. Facial recognition is one of the simplest biometrics that can be achieved with minimal user-input, however facial recognition devices are often expensive and tailored to perform specific tasks with limited modular usage. We plan to develop a highly modular system based around facial recognition technology that allows user customization to perform specific tasks. 
-The proposed facial recognition system will incorporate a Raspberry Pi microcontroller, a camera, and a touchscreen. The Raspberry Pi will process the images obtained from the camera, display them on a touchscreen, compare these images to a database of known users, and then perform a certain function specific to that user. This system will then be connected to additional components such as lights, speakers, and other components to allow performance of specific user required tasks. The initial task we propose is the use of this system to recognize and identify a person and then display certain user information such as name. In this use-case, once the system recognizes the individual as a known user, the system will display the user’s name.
-After completion of this use case, other implementations of this system will then be developed to expand the functions of this system. Other proposed tasks include playing music from a user’s playlist, switching on lights, or outputting user-specific information (e.g. calendar, agenda, or stock prices).
+As technology advances, it is becoming increasingly feasible for laymen and hobbyists to develop personalized biometric-based control systems for household use. Facial recognition is one of the simplest biometrics that can be achieved with minimal user-input, however facial recognition devices are often expensive and tailored to perform specific tasks with limited modular usage. We sought to develop a highly modular system based around facial recognition technology that allows user customization to perform specific tasks. The facial recognition system we built incorporates a Raspberry Pi microcontroller, a camera, and a touchscreen. The Raspberry Pi processes the images obtained from the camera, displays them on a touchscreen, compares these images to a database of known users, and then performs a certain function specific to that user. This system can then be connected to additional components such as lights, speakers, and other components to allow performance of specific user-defined tasks. The initial task we proposed and then developed is the use of this system to recognize and identify a person and then display certain user information such as name. In this use-case, once the system recognizes the individual as a known user, the system will display the user’s name. After completion of this use case, we expanded the system to include pertinent weather updates, an rss reddit feed, date/time as well as a personalized message.  Future feature expansion includes playing music from a user’s playlist, switching on lights, or outputting other user-specific information (e.g. calendar, agenda, or stock prices).
 
-*Revised 11/05/15*
+
 
 
 #Updated Thoughts - 10/29/15
@@ -67,3 +67,4 @@ Progress: We were able to get facial identification working using the adafruit t
 7. https://www.daniweb.com/programming/software-development/code/490561/postal-code-zips-and-location-python
 8. http://www.pythonforbeginners.com/feedparser/using-feedparser-in-python
 
+*Revised 12/2/15*
