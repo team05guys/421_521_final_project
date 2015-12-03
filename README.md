@@ -58,12 +58,12 @@ Concept discussion with Jordan and Jacob, we will move away from security aspect
 Progress: We were able to get facial identification working using the adafruit tutorial. We had to remove any mention of RPIO.GPIO as this is not a command supported in Raspberry Pi 2. We modified the box2.py file and trained the pi-rec software to Dan's face and were able to positively identify him. However, the system could not recognize anyone else's face (tried 2 people)
 
 #References 
-1. https://learn.adafruit.com/raspberry-pi-face-recognition-treasure-box/overview - Eigenface tutorial using OpenCV
-2. https://thinkrpi.wordpress.com/2013/05/22/opencv-and-camera-board-csi/ - source code for OpenCV using above method
+1. https://learn.adafruit.com/raspberry-pi-face-recognition-treasure-box/overview
+2. https://thinkrpi.wordpress.com/2013/05/22/opencv-and-camera-board-csi
 3. https://www.youtube.com/watch?v=vRHoQVZLvoM - pictures for figure 2
-4. http://www.open-electronics.org/raspberry-pi-and-the-camera-pi-module-face-recognition-tutorial/ - facial recognition using Haar-features
-5. http://thecodeinn.blogspot.com/2013/07/tutorial-weather-forecast-in-python.html - Link to source code for Weather Forecasting
-6. https://code.google.com/p/python-weather-api/ - More source coding for Weather Forecasting
-7. https://www.daniweb.com/programming/software-development/code/490561/postal-code-zips-and-location-python - Code to identify city/state based on zipcodes
+4. http://www.open-electronics.org/raspberry-pi-and-the-camera-pi-module-face-recognition-tutorial
+5. http://thecodeinn.blogspot.com/2013/07/tutorial-weather-forecast-in-python.html
+6. https://code.google.com/p/python-weather-api
+7. https://www.daniweb.com/programming/software-development/code/490561/postal-code-zips-and-location-python
 8. http://www.pythonforbeginners.com/feedparser/using-feedparser-in-python
 
