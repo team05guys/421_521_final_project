@@ -1,11 +1,12 @@
 #! /usr/bin/python
 
+#import relevant modules 
 import picamera
 import time
 from SimpleCV import Color, Image, np
 import numpy as np
 
-#initialize numpy array with dimensions that match the camera's resolution
+#initialize numpy array with dimensions that match the camera's resolution (in order to build a grid overlay)
 thickness = 15
 a = np.zeros((480, 800, 3), dtype = np.uint8)
 
@@ -14,24 +15,26 @@ x_offset = 50
 y_offset = 200
 
 #create a number of solid white lines equal to the $thickness, within the numpy array
+#0xff is the hexadecimal code for white
 for i in range(thickness):
 	a[x_offset + i, :, :] = 0xff
 	a[480 - (x_offset + i), :, :] = 0xff
 	a[:, y_offset + i, :] = 0xff
 	a[:, 800 - (y_offset + i), :] = 0xff
 
+#Set camera settings
 quality = 400
 minMatch = 0.3
 
-#Set do you want to add a new face?
-#If yes, do below code
 
 with picamera.PiCamera() as camera:
+#Infinite loop of image acquisition that breaks when a face is recognized
    while True:
 	#acquire image
 	print "Please align your face with the camera"
 	time.sleep(1)
  	camera.start_preview()
+ 	
 	#add overlay
 	o = camera.add_overlay(np.getbuffer(a), layer = 3, alpha = 64)
 	time.sleep(10)
@@ -45,28 +48,34 @@ with picamera.PiCamera() as camera:
 	faces.draw()
 	face = faces[-1]
 
-	#link image to your name and personal greeting
+	#Register user name (also used as identifier for filenames) 
 	print "Please Enter Your Name"
 	name = raw_input()
+	
+	#Register personal greeting 
 	print("Please enter a personalized greeting message:")
 	greeting = raw_input()
+	
+	#Register name of favorite subreddit 
 	print("Please enter the exact name of your favorite subreddit: ")
 	myCity = raw_input()
+	
+	#Register zip code of interest (used to find local weather)
 	print("Please enter the zip code of your current location:")
 	myzip = raw_input()
 	
 	#save image as password_yourName.jpg
 	face.crop().save("Saved_Passwords/password_" + str(name) + ".jpg")
 	
-	#save personal greeting
+	#save personal greeting in a new .txt file, using registered "name" in filename ID
 	greeting_file = open("Personal_Stuff/greeting/" + str(name) + "_greeting" +  ".txt", 'w')
 	greeting_file.write(greeting)
 
-	#save favorite city
+	#save favorite city in a new .txt file, using registered "name" in filename ID
 	city_file = open("Personal_Stuff/city/" + str(name) + "_city" + ".txt", 'w')
 	city_file.write(myCity)
 
-	#save zip code of current location
+	#save zip code of current location in a new .txt file, using registered "name" in filename ID
 	myzip_file = open("Personal_Stuff/ZCode/" + str(name) + "_myzip" + ".txt", 'w')
 	myzip_file.write(myzip)
 	
@@ -75,12 +84,3 @@ with picamera.PiCamera() as camera:
 	print "Ending the Program"
 	break
 
-
-	
-
-
-
-
-
-
-#If no, then terminate
