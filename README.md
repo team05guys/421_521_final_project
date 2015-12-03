@@ -5,6 +5,40 @@ _Dan Sazer & Anand Ganapathy_
 
 Rice Bioe 421/521 Final Project
 
+#Summary of Device
+The contents of this repository allows personalized text outputs to be displayed in response to user facial identification. Upon facial registration, the user is prompted to enter his or her name, a personalized greeting, current zip code (for weather forecasts), and favorite subreddit. Upon facial identification, the personalized data will be output. 
+
+#Technical Requirements
+###Hardware
+- Raspberry Pi or other microcontroller compatible with Raspbian 
+- A camera module compatible with your microcontroller
+- LCD screen compatible with your microcontroller
+- STDINPUT device (e.g. keyboard) compatible with your microcontroller 
+
+###Software
+- Raspbian
+- Python
+- Python modules
+  * Picamera
+  * SimpleCV
+  * Numpy
+  * Pywapi
+  * Feedparser
+  
+###Walkthrough
+1) Download the entire repository from GitHub that contains this README.md
+2) Verify the microcontroller is connected to your camera, LCD screen, and STDINPUT device
+3) Install relevant Python modules as outlined in the "Software" portion of this README.MD
+4) Position face in front of camera
+5) Execture PasswordSet.py
+6) Input requested information
+7) Wait, chill, do whatever, go to sleep and wakeup, wait 10 years, etc
+8) Position face in front of camera
+9) Execture PasswordCompare.py
+10) Marvel at your requested personal data
+
+
+
 #Abstract
 
 ##A Customizable Facial Recognition System to Perform Modularized Tasks
