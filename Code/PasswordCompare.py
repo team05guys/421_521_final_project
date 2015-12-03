@@ -1,5 +1,6 @@
 #! /usr/bin/python
 
+#import relevant modules
 import picamera
 import time
 from SimpleCV import Color, Image, np
@@ -10,23 +11,28 @@ from weather import *
 
 
 #Set up grid overlay
+#initialize numpy array with dimensions that match the camera's resolution
 import numpy as np
 a = np.zeros((480, 800, 3), dtype = np.uint8)
 
+#initialize offset from edges, for grid lines
 x_offset = 50
 y_offset = 200
  
+#create a number of solid white lines equal to the $thickness, within the numpy array
 a[x_offset, :, :] = 0xff
 a[480 - x_offset, :, :] = 0xff
 a[:, y_offset, :] = 0xff
 a[:, 800 - y_offset, :] = 0xff
 
 
-
+#Set camera settings
 quality = 400
 minMatch = 0.3
 minDist = 0.25
+
 with picamera.PiCamera() as camera:
+#Infinite loop of image acquistion that breaks when a face is recognized
 	while True:
 		camera.start_preview()
 		#overlay grid 		
@@ -58,6 +64,7 @@ with picamera.PiCamera() as camera:
 			for e in password_array:
 				password = Image(e)
 				keypoints = password.findKeypointMatch(template,quality,minDist,minMatch)
+				#keypoints is the function that performs the comparison of the current face image against the known user database
 				if keypoints:
 					#print your name
 					myName = str(e[9:(len(e)-4)])
@@ -91,6 +98,7 @@ with picamera.PiCamera() as camera:
 					break
 			
 			if not keypoints:
+				#If the current face image is not recognized against the known user database, the line below is printed and the program terminates
 				print("I DO NOT RECOGNIZE")
 		
 			break
